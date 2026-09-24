@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sett"
+version = "0.1.0"
+description = "weave the sha256 of a file into a small piece of cloth, so two files can be compared by eye."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Alina Schanz" }]
+keywords = ["sha256", "checksum", "visual-hash", "png", "svg", "cli"]
+classifiers = [
+  "Environment :: Console",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Multimedia :: Graphics",
+  "Topic :: Utilities",
+]
+
+[project.urls]
+Homepage = "https://github.com/AlinaSchan/sett"
+Issues = "https://github.com/AlinaSchan/sett/issues"
+
+[project.scripts]
+sett = "sett.cli:main"
+
+[tool.setuptools]
+packages = ["sett"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
